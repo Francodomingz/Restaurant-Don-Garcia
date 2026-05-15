@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Restaurant Don García - Cocina &amp; Cava</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#462400",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fdf9f3",
+                        "tertiary": "#291200",
+                        "surface-container-high": "#ebe8e2",
+                        "secondary": "#7b580d",
+                        "surface": "#fdf9f3",
+                        "on-surface": "#1c1c18",
+                        "secondary-fixed-dim": "#eebf6d",
+                        "on-surface-variant": "#554242",
+                        "primary-fixed-dim": "#ffb3b4",
+                        "surface-bright": "#fdf9f3",
+                        "on-tertiary-fixed": "#2e1500",
+                        "primary": "#390009",
+                        "on-primary-container": "#db767b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#7b2c32",
+                        "inverse-on-surface": "#f4f0ea",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "on-background": "#1c1c18",
+                        "surface-container": "#f1ede7",
+                        "secondary-container": "#fdcd79",
+                        "surface-variant": "#e6e2dc",
+                        "surface-tint": "#994348",
+                        "surface-container-low": "#f7f3ed",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdcc1",
+                        "primary-container": "#58111a",
+                        "outline": "#877272",
+                        "inverse-surface": "#31302d",
+                        "surface-dim": "#dddad4",
+                        "on-secondary-container": "#785509",
+                        "outline-variant": "#dac0c0",
+                        "tertiary-fixed-dim": "#fbb980",
+                        "on-tertiary-fixed-variant": "#693c0e",
+                        "primary-fixed": "#ffdada",
+                        "inverse-primary": "#ffb3b4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#c28753",
+                        "on-secondary-fixed": "#271900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#40000b",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdea8",
+                        "surface-container-highest": "#e6e2dc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Source Serif 4", "serif"],
+                        "headline-lg": ["Source Serif 4", "serif"],
+                        "display-lg-mobile": ["Source Serif 4", "serif"],
+                        "display-lg": ["Source Serif 4", "serif"],
+                        "button": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .dotted-leader {
+            display: flex;
+            align-items: baseline;
+        }
+        .dotted-leader::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px dotted #877272;
+            margin: 0 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/20">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Restaurant Don García - Cocina &amp; Cava</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#inicio">Inicio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#cocina">La Cocina</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#cava">Nuestra Cava</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#ubicacion">Ubicación</a>
+</div>
+<button class="bg-primary-container text-on-primary font-button px-6 py-2 rounded-lg hover:opacity-80 transition-opacity duration-300 hidden sm:block">
+            Reservar una Mesa
+        </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20" id="inicio">
+<div class="absolute inset-0 z-0">
+<img alt="Premium Dining Ambience" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvrQ_C48kkjpVs7zERcobCLPx-J4aNf5BIUd4QXUi0UFTymR8KKxx0_JH_sd5pqjdORJ9SJiwaGzjtzO0vA-VZRP8YCrDUOGoYp_xXJid0w0aKBY0xmlNkTEzZE8_DxI6A0mciPLRUFU2obyuuH0b4jIxkxE64gJ-yOe34Uvu5_EMUQy1AqCwej14Hj32bt7_3Bxak84aKhC5IcTEb1GEX0LNnjl2sa-k0BJmQVRI80TrPK4nHMA2yij6wXEkP76UgTOzQKl5XmCes"/>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl text-white">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-sm drop-shadow-lg">
+                    El Sabor de la Tradición y el Buen Vino
+                </h1>
+<p class="font-body-lg text-body-lg mb-stack-md text-white/90">
+                    Un rincón íntimo en Corrientes dedicado a la alta cocina clásica y una selección exclusiva de bodegas.
+                </p>
+<div class="flex flex-col sm:flex-row gap-gutter">
+<a class="bg-primary text-white font-button px-8 py-4 rounded-lg text-center transition-transform active:scale-95 duration-150" href="#cocina">
+                        Explorar la Carta
+                    </a>
+<a class="bg-white/10 backdrop-blur-md border border-white/30 text-white font-button px-8 py-4 rounded-lg text-center hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2" href="https://wa.me/543794434604">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+                        Reservar por WhatsApp
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Nuestra Cava Section -->
+<section class="py-stack-lg bg-surface" id="cava">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="order-2 md:order-1 border border-tertiary/20 p-2 bg-surface-container-low shadow-sm">
+<img alt="Exquisite Wine Cellar" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDzWG0wcxphIHgC9_gLbBjJBj01rgrKK3Na9N1PTj8IAH4GWjRJ9p-VDbUJvJ2fDY7sAIwIA9s74AmVRBwdRP5xvkmkXv2imM_KQrQm_tloikitrJOzyEBzdLs-lDHTWjmWzXd7tBMdM1_fHFL_cTCLL2ycgvn4cIORVvlXOP_dOT53ntaOM4o2_-Ky9fLT3vvS-bU98Fa_oXrBgceTCsVcvGbRn9MT_O7VPoBG5Iugddsm2tUEtaxpLNQob1SyTXNRZUILRZB-YbZ"/>
+</div>
+<div class="order-1 md:order-2 space-y-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">Bodega &amp; Sommelier</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Nuestra Cava</h2>
+<div class="w-16 h-px bg-secondary"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Descubra una colección curada de las etiquetas más prestigiosas de Argentina. Desde Malbecs de altura hasta blends complejos, nuestra cava es el corazón de Don García.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "Ofrecemos maridajes guiados por expertos para elevar cada plato de nuestra cocina."
+                    </p>
+<div class="pt-stack-sm flex items-center gap-stack-sm">
+<div class="p-3 bg-tertiary-fixed rounded-full">
+<span class="material-symbols-outlined text-tertiary">wine_bar</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps font-bold text-on-tertiary-fixed">Reserva Especial</p>
+<p class="font-body-md text-body-md">Más de 200 etiquetas seleccionadas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- La Cocina (Menu) Section -->
+<section class="py-stack-lg bg-surface-container-lowest" id="cocina">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-stack-lg">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block mb-stack-sm">La Gastronomía</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Nuestras Recomendaciones</h2>
+<div class="flex justify-center items-center mt-stack-sm">
+<div class="h-px w-12 bg-outline-variant"></div>
+<span class="material-symbols-outlined text-sm mx-4 text-secondary">star</span>
+<div class="h-px w-12 bg-outline-variant"></div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Dish 1 -->
+<div class="bg-surface border border-outline-variant/30 flex flex-col group overflow-hidden">
+<div class="overflow-hidden">
+<img alt="Premium Ribeye Steak" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKkfYT4KHV9F-p887UoGjcEPi2hNlQXVLLI_Dld9h_pNBT_k_U8gfN-0dsRQe4oeMIjGbcGR_8NufY4iE3TNkvNLZTYalO4izzigmQH62sB_MEyXdyW9hWhd8JSfOkKBBrcyOJVK2o0mYE3d7eeYGJ2QixRpwhJ_HoYiqP7WIQlRmhcRia3oYp2cugeWbuhusLGAio_M79QSoV9T5-xILwjwzunkiX5NkZYzk0r_k4GVPzpgYuqQWMOl_Pw4LA6EXJCxkkq--O1Yxw"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Ojo de Bife madurado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4 italic">Con papas rústicas al romero.</p>
+<div class="dotted-leader">
+<span class="font-body-lg text-body-lg text-secondary font-bold">$ARS 18.500</span>
+</div>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="bg-surface border border-outline-variant/30 flex flex-col group overflow-hidden">
+<div class="overflow-hidden">
+<img class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Traditional homemade stuffed pasta with artisanal sauce served in a rustic ceramic bowl, warm moody lighting of a classic Argentine restaurant, fine dining style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfTUoKMXiIWeuDI-b_-U5lFOtx3eX6VWa_QOwpCpqM4Dnle5T44zQi6oNQo6zpFb8tblI5UnTaNODU9TLCEl_f24yFUtIuzHbqDep_Wu289jyPHRvz4YlCmxtcyO4GENaVuwcXCv28lKEcClMwbtuIS1JHtwSqUaqZjP4fmcQAqZbxXJxJ_qz9SUM9dyj9O57oAgv-iViXzI6kYKc2PuUuCUqBwHt6Vx7w4gvTs5aNTJKWXpcXUAfmuOPFKMSl52yq-Eav7op_vZD5"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Pastas caseras rellenas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4 italic">Elaboración artesanal diaria.</p>
+<div class="dotted-leader">
+<span class="font-body-lg text-body-lg text-secondary font-bold">$ARS 12.000</span>
+</div>
+</div>
+</div>
+<!-- Dish 3 -->
+<div class="bg-surface border border-outline-variant/30 flex flex-col group overflow-hidden">
+<div class="overflow-hidden">
+<img class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Selection of premium cured meats and artisanal cheeses on a dark wooden board, professional food photography, warm overhead lighting, elegant restaurant background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzly6aq3dEJbPpYrpsQ-juUD--rq_LnDojVll8_Z43_DYVf8PMcJU91zJ3cPcBRY9mcasRFD2mCB89GazWMn0OGSUHL_CSzqN0b3oh7-4Mlqu_1cW4u6NwLUZVv5mHwPvv1W9he1N4DWFOkLcfXAuMin3aSYAqdiRpCZVZrAJRFTyJ2oeJkBbWozB3k22YfU6G3nmsmr1PlY2D4Y-Ii_ED7KC-kNPd5q4Mi7ghD14hIGc1PIBMLKpN-R0umWDbnO6lY6aBMOx-rscU"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Tabla de fiambres</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4 italic">Selección de la casa.</p>
+<div class="dotted-leader">
+<span class="font-body-lg text-body-lg text-secondary font-bold">$ARS 15.000</span>
+</div>
+</div>
+</div>
+<!-- Dish 4 -->
+<div class="bg-surface border border-outline-variant/30 flex flex-col group overflow-hidden">
+<div class="overflow-hidden">
+<img class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Gourmet chocolate lava cake with a molten center, served with a scoop of vanilla bean ice cream and fresh berries, fine dining presentation, dramatic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOh9RHzZqQRDQ9AbBpoz5OJZVu0ENPdM0AqFW5o4b9lVefjaYs62L_s60Y2_NES5NqtQbWwrSqIhixyJmrj9ejJuiUPMff5kFV5u5t0P-_PoFnwMFGtKmWaplmVVMUaMN8fGc0Ne028IV1IFRf-BV5Oj8NA7HAbZRvFczMK90FoeW0Fb4WXcgK5f-CLOleXLEru6XjEEI4CajqD6Sm4IOnJ0vSzAAg7K_QmbNlyVFQHCt673vH8Kb0DRnJey00Up4JM5LN44IFrU9b"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Volcán de chocolate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4 italic">Con helado de crema americana.</p>
+<div class="dotted-leader">
+<span class="font-body-lg text-body-lg text-secondary font-bold">$ARS 7.500</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Info & Hours -->
+<section class="py-stack-lg bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Location -->
+<div class="p-stack-md bg-surface-container border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary mb-4">location_on</span>
+<h4 class="font-headline-md text-headline-md mb-2">Dirección</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Pellegrini 1211, Corrientes, Argentina.</p>
+</div>
+<!-- Contact -->
+<div class="p-stack-md bg-surface-container border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary mb-4">call</span>
+<h4 class="font-headline-md text-headline-md mb-2">Contacto</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">+54 379 443-4604</p>
+<p class="font-body-md text-body-md text-on-surface-variant">reservas@dongarcia.com</p>
+</div>
+<!-- Hours -->
+<div class="p-stack-md bg-surface-container border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary mb-4">schedule</span>
+<h4 class="font-headline-md text-headline-md mb-2">Horarios</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Mar - Sáb: 12:00-15:30, 20:30-00:30</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Dom: 12:00-15:30</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Map & CTA Section -->
+<section class="relative py-stack-lg bg-primary text-white overflow-hidden" id="ubicacion">
+<div class="absolute inset-0 opacity-10">
+<div class="h-full w-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row gap-stack-lg items-center">
+<div class="flex-1 text-center md:text-left">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-sm">Visítenos en Corrientes</h2>
+<p class="font-body-lg text-body-lg text-white/80 mb-stack-md">Estamos ubicados en el corazón histórico de la ciudad, listos para brindarle una experiencia inolvidable.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-stack-sm">
+<button class="bg-white text-primary font-button px-8 py-4 rounded-lg flex items-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">event_available</span>
+                            Reservar Ahora
+                        </button>
+<button class="bg-transparent border border-white text-white font-button px-8 py-4 rounded-lg hover:bg-white/10 transition-colors">
+                            Ver Menú Completo
+                        </button>
+</div>
+</div>
+<div class="flex-1 w-full h-[400px] border-4 border-white/10 rounded-lg overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Stylized maps view of the historical center of Corrientes, highlighting Pellegrini street. A warm-toned, sophisticated digital map representation in keeping with the restaurant's premium branding." data-location="Corrientes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC2wdrr3YJKQk6BLJtfcMZbgdofbLvJ10RGddshRzoCNRzncLOIFEc8J7kVefPGoAJhGRsnmSvhtKRlw-GlgdnPQV-OiHyXL14sj1VOCS84CcVR0FWhTanljJ-Bql-jAdMq2vxSZu-eQX3SXYbeh7P2-hITBuOJxR_qCX3qgzVyUXJ58sjDKmESIC4ARSPgkpi23Vr0noCKttYzhb1qpN7na2m82CARMNrn3zSz0HcGrM2g2Y9rpOW0d3inkFDZ-mIDhpbBtNZifRd"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-highest border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md text-primary mb-2">Restaurant Don García</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Restaurant Don García - Cocina &amp; Cava. Pellegrini 1211, Corrientes.</p>
+</div>
+<div class="flex gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">WhatsApp</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">TripAdvisor</a>
+</div>
+<div class="flex flex-col items-center md:items-end opacity-90 hover:opacity-100">
+<span class="font-label-caps text-label-caps text-secondary">TECNOLOGÍA</span>
+<span class="font-body-md text-body-md">Desplegado en la nube por Stitch</span>
+</div>
+</footer>
+<!-- FAB for quick reservations on mobile -->
+<button class="md:hidden fixed bottom-6 right-6 z-50 bg-primary text-white p-4 rounded-full shadow-lg active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</button>
+</body></html>
